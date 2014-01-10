@@ -1,0 +1,78 @@
+﻿@model AHMVCTest.Models.Currency
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Conversion</title>
+</head>
+<body>
+    <div>
+        <h4>Currency</h4>
+    	<hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.SourceCountry)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SourceCountry)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SourceCurrency)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SourceCurrency)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.SourceExchangeRate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.SourceExchangeRate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TargetCountry)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TargetCountry)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TargetCurrency)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TargetCurrency)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.TargetExchangeRate)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.TargetExchangeRate)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.ConversionAmount)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.ConversionAmount)
+            </dd>
+    
+        </dl>
+    </div>
+</body>
+</html>

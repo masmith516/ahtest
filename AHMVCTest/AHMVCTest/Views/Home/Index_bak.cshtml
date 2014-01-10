@@ -1,0 +1,42 @@
+﻿@model AHMVCTest.Models.Home
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#bExecute").click(function () {
+                var uri = "http://ahservices.localtest.me/api/currency/";
+
+                var sourceCode = $("#SourceCountryCode").val();
+                var targetCode = $("#TargetCountryCode").val();
+                var amount = $("#Amount").val();
+                
+                uri = uri + sourceCode + "/" + targetCode + "/" + amount;
+                $.ajax("http://ahservices.localtest.me/api/currency/en-us/en-gb/50", {
+                    type: "GET",
+                    dataType: "xml",
+                    success: function (data) { alert(1); }
+                });
+            });
+        });
+    </script>
+</head>
+<body>    
+    <div>@Html.LabelFor(m => m.SourceCountryCode)</div>
+    <div>@Html.DropDownListFor(m => m.SourceCountryCode, new SelectList(ViewBag.Cultures, "Key", "Value"))</div>
+    <div>@Html.LabelFor(m => m.TargetCountryCode)</div>
+    <div>@Html.DropDownListFor(m => m.TargetCountryCode, new SelectList(ViewBag.Cultures, "Key", "Value"))</div>
+    <div>@Html.LabelFor(m => m.Amount)</div>
+    <div>@Html.TextBoxFor(m => m.Amount)</div>
+    <div><input id="bExecute" type="button" value="execute" /></div>
+</body>
+</html>
